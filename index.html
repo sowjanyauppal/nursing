@@ -10,7 +10,56 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="viewport" content="initial-scale=1, maximum-scale=1">
       <!-- site metas -->
-      <title>NURSING</title>
+      <title>NURSING</title><style>
+         /* Style for the container */
+         #promotion-container {
+             width: 100%;
+             height: 200px; /* Adjust height as needed */
+             overflow: hidden;
+             position: relative;
+         }
+     
+         /* Style for individual promotions */
+         .promotion {
+             position: absolute;
+             bottom: 0;
+             left: 100%; /* Initially hides the promotion outside the container */
+             width: 100%;
+             min-width: 350px;
+             height: auto;
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             background-color: #f2f2f2;
+             transition: left 0.9s ease-in-out;
+         }
+     
+         /* Style for the image */
+         .promotion img {
+             max-width: 50%;
+             height: auto;
+         }
+     
+         /* Style for the text information */
+         .promotion .text {
+             max-width: 50%;
+             padding: 10px;
+             padding-left: 85px;
+         }
+     
+         /* Animation to slide the promotions */
+         .move {
+             left: 0;
+         }
+         .imgsize{
+             
+             min-width: 80px;
+             min-height:60px ;
+     
+         }
+         </style>
+        
+      
       <meta name="keywords" content="">
       <meta name="description" content="">
       <meta name="author" content="">
@@ -32,7 +81,61 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
    </head>
    <!-- body -->
-   <body class="main-layout">
+   <body class="main-layout"><div id="promotion-container">
+    
+      <a href="https://coachinginstitutes.netlify.app"> <div class="promotion">
+          <p> Ads </p>
+          <div class="image">
+              <img class="imgsize" src="images/ins1.jpg" alt="Promotion 1">
+          </div>
+          <div class="text">
+              
+              <p>Coaching-Institutes</p>
+          </div>
+      </div></a>
+  
+      <a href="https://coaching-center.netlify.app"><div class="promotion">
+          <p> Ads </p>
+          <div class="image">
+              <img class="imgsize" src="images/cc1.jpg" alt="Promotion 2">
+          </div>
+          <div class="text">
+              <p>coaching-centers</p>
+          </div>
+      </div></a>
+     
+      <a href="https://saikeerthi-medical-agency.netlify.app"><div class="promotion">
+          <p> Ads </p>
+          <div class="image">
+              <img class="imgsize" src="images/sk.jpg" alt="Promotion 3">
+          </div>
+          <div class="text">
+              <p>saikeerthi-medical-agency </p>
+          </div>
+      </div></a>
+  
+      
+  </div>
+  
+  <script>
+      // JavaScript to rotate promotions every 5 seconds
+      document.addEventListener('DOMContentLoaded', function () {
+          var promotions = document.querySelectorAll('.promotion');
+          var index = 0;
+  
+          function rotatePromotion() {
+              promotions[index].classList.remove('move');
+              index = (index + 1) % promotions.length;
+              promotions[index].classList.add('move');
+          }
+  
+          rotatePromotion(); // Initially display the first promotion
+  
+          setInterval(rotatePromotion, 10000); // Rotate promotion every 5 seconds
+      });
+  </script>
+  
+  
       <!-- loader  -->
       <div class="loader_bg">
          <div class="loader"><img src="images/loading.gif" alt="#" /></div>
